@@ -1,6 +1,7 @@
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
+import random as rd
 
 width, height = 500, 500
 
@@ -39,7 +40,9 @@ def display():
     # Set circle color to white
     glColor3f(1.0, 1.0, 1.0)  
     glPointSize(1)
-    midpoint_circle(50)
+    for x in range(50):
+        radius = rd.randint(50,80)
+        midpoint_circle(radius)
     glFlush()
 
 def init():
@@ -54,3 +57,5 @@ glutCreateWindow(b"Midpoint Circle Algorithm")
 init()
 glutDisplayFunc(display)
 glutMainLoop()
+bl.main()
+bl.display()
